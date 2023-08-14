@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     inputElement.addEventListener("blur", function (event) {
         const inputValue = event.target.value;
-        const requiredLength = parseInt(inputElement.getAttribute("data-length"));
-        if (inputValue.length === requiredLength) {
+        const requiredLength = +inputElement.getAttribute("data-length");
+        if (inputValue.trim().length === requiredLength) {
             inputElement.classList.remove("invalid");
             inputElement.classList.add("valid");
         } else {
